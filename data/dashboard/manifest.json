@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-13T18:59:20.990468+00:00",
+  "source": "E:\\FraudDetection\\data\\lake\\gold",
+  "tables": {
+    "kpis": 1,
+    "alert_details": 230,
+    "alerts_by_hour": 21,
+    "alerts_by_type": 5,
+    "top_risky_customers": 50
+  },
+  "refresh_note": "Refresh the folder data source in Power BI after export."
+}

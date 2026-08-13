@@ -1,0 +1,78 @@
+{
+  "ok": true,
+  "backfilled_at": "2026-08-13T16:27:42.445623+00:00",
+  "bronze": {
+    "transactions": {
+      "rows": 1111,
+      "path": "/repo/data/lake/bronze/transactions"
+    },
+    "logins": {
+      "rows": 610,
+      "path": "/repo/data/lake/bronze/logins"
+    },
+    "payments": {
+      "rows": 549,
+      "path": "/repo/data/lake/bronze/payments"
+    },
+    "customer_locations": {
+      "rows": 790,
+      "path": "/repo/data/lake/bronze/customer_locations"
+    },
+    "customers": {
+      "rows": 200,
+      "path": "/repo/data/lake/bronze/customers"
+    },
+    "merchants": {
+      "rows": 50,
+      "path": "/repo/data/lake/bronze/merchants"
+    }
+  },
+  "silver": {
+    "transactions": {
+      "rows": 1111,
+      "path": "/repo/data/lake/silver/transactions"
+    },
+    "logins": {
+      "rows": 610,
+      "path": "/repo/data/lake/silver/logins"
+    },
+    "payments": {
+      "rows": 549,
+      "path": "/repo/data/lake/silver/payments"
+    },
+    "customer_locations": {
+      "rows": 790,
+      "path": "/repo/data/lake/silver/customer_locations"
+    },
+    "events": {
+      "rows": 3060,
+      "distinct_event_ids": 3060,
+      "labeled": 230,
+      "scored": 1660,
+      "avg_labeled_probability": 0.9829,
+      "path": "/repo/data/lake/silver/events"
+    }
+  },
+  "gold": {
+    "customer_risk_summary": {
+      "rows": 200,
+      "path": "/repo/data/lake/gold/customer_risk_summary",
+      "with_fraud": 50,
+      "with_events": 200,
+      "levels": {
+        "LOW": 170,
+        "MEDIUM": 10,
+        "CRITICAL": 20
+      }
+    },
+    "merchant_fraud_summary": {
+      "rows": 50,
+      "with_fraud": 50,
+      "path": "/repo/data/lake/gold/merchant_fraud_summary"
+    },
+    "fraud_events": {
+      "rows": 230,
+      "path": "/repo/data/lake/gold/fraud_events"
+    }
+  }
+}

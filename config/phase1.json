@@ -1,0 +1,17 @@
+{
+  "seed": 42,
+  "n_customers": 200,
+  "n_merchants": 50,
+  "n_normal_transactions": 1000,
+  "n_normal_logins": 600,
+  "n_normal_payments": 400,
+  "n_normal_locations": 800,
+  "time_window_hours": 24,
+  "scenario_counts": {
+    "velocity": 10,
+    "impossible_travel": 10,
+    "login_transaction": 10,
+    "payment_attack": 10,
+    "high_value": 10
+  }
+}

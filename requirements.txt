@@ -1,0 +1,33 @@
+# Phase 1 uses only the Python standard library (no installs required).
+
+# --- Installed so far (matches the phase tracker in README) ---
+# Phase 2 (Kafka): confluent-kafka (librdkafka). Imported as `confluent_kafka`
+# so it never clashes with this project's own `kafka/` package.
+confluent-kafka>=2.0
+#
+# Phases 4-15 (Spark + Delta Lake). Spark also needs:
+#   - a JDK (this machine: Temurin 21, used via JAVA_HOME)
+#   - winutils.exe on Windows (this repo ships it under .tools/winutils,
+#     resolved by spark/common.py into HADOOP_HOME)
+pyspark>=4.2
+# Phase 15 (Delta Lake): the Delta connector is NOT installed via pip. The
+# delta-spark wheel pins pyspark<=4.1.1 and would downgrade this box's
+# pyspark 4.2.0, so spark/common.py pulls the jar through
+# spark.jars.packages: io.delta:delta-spark_4.1_2.13:4.3.1 (the newest Delta
+# build; there is no Spark-4.2 artifact yet - verified working on 4.2.0 here).
+#
+# Phase 8 (stateful impossible travel): Spark 4.2's arbitrary stateful
+# operators (transformWithState / applyInPandasWithState) need pyarrow and
+# google.protobuf at runtime; the RocksDB state store backend is required
+# (already configured in spark/common.py).
+pyarrow>=18.0.0
+protobuf>=4.25
+#
+# Phase 13 (ML) - installed, XGBoost offline model + evaluation (run_phase13.py)
+xgboost>=2.0
+scikit-learn>=1.4
+pandas>=2.0
+numpy>=1.26
+#
+# Phase 18 (Airflow) - installed in its own image, not on your host
+# apache-airflow>=2.8

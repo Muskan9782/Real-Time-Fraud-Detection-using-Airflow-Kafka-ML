@@ -1,0 +1,69 @@
+# Local infra stack: Phase 2 Kafka + Phase 18 Airflow.
+#
+# Commands:
+#   docker compose up -d            start Kafka + Airflow
+#   docker compose up -d airflow    start only Airflow (Phase 18)
+#   docker compose ps               check status
+#   docker compose down             stop everything (keeps data)
+#   docker compose down -v          stop Kafka and wipe its data volume
+#
+# Phase 18 (Airflow) runs in its own image (Dockerfile.airflow) so the
+# training / quality / backfill DAGs can execute their PySpark + Delta +
+# XGBoost jobs inside the container. The repo is mounted at /repo; the DAGs
+# are read from /repo/dags and write artifacts to /repo/data/airflow.
+
+services:
+  kafka:
+    image: apache/kafka:3.7.0
+    container_name: fraud-kafka
+    ports:
+      - "9092:9092"   # PLAINTEXT listener for applications on the host
+    environment:
+      # Single-node KRaft cluster: this broker is both broker and controller.
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      # Single replica is fine for local learning only.
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      # Faster consumer-group rebalances while learning.
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      # We create topics explicitly via kafka/create_topics.py.
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-topics.sh", "--bootstrap-server", "localhost:9092", "--list"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+
+  airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
+    image: fraud-airflow:2.10.2
+    container_name: fraud-airflow
+    # standalone = db migrate + admin user + webserver + scheduler + triggerer
+    command: ["airflow", "standalone"]
+    ports:
+      - "8080:8080"   # Airflow webserver/UI (admin / admin)
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_FOLDER: /repo/dags
+      PYTHONPATH: /repo
+      HADOOP_HOME: /opt/hadoop
+      JAVA_HOME: /usr/lib/jvm/java-17-openjdk-amd64
+      TZ: UTC
+    volumes:
+      - ./:/repo
+
+volumes:
+  kafka-data:

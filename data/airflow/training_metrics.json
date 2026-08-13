@@ -1,0 +1,35 @@
+{
+  "train": {
+    "dataset_rows": 1660,
+    "dataset_positive": 230,
+    "dataset_negative": 1430,
+    "train_rows": 1328,
+    "train_positive": 184,
+    "train_negative": 1144,
+    "test_rows": 332,
+    "test_positive": 46,
+    "test_negative": 286,
+    "scale_pos_weight": 6.217,
+    "model_file": "/repo/ml/model/xgb_model.json",
+    "test_file": "/repo/ml/model/test_set.parquet",
+    "metadata_file": "/repo/ml/model/metadata.json"
+  },
+  "evaluation": {
+    "threshold": 0.5,
+    "n_test": 332,
+    "n_positive": 46,
+    "n_negative": 286,
+    "tp": 43,
+    "fp": 5,
+    "fn": 3,
+    "tn": 281,
+    "precision": 0.8958333333333334,
+    "recall": 0.9347826086956522,
+    "f1": 0.9148936170212766,
+    "roc_auc": 0.9898905442383703,
+    "pr_auc": 0.9726310456993548
+  },
+  "model_file": "/repo/ml/model/xgb_model.json",
+  "metadata_file": "/repo/ml/model/metadata.json",
+  "ok": true
+}

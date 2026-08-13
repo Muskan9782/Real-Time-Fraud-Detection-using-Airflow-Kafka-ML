@@ -1,0 +1,23 @@
+{
+  "phase": 1,
+  "seed": 42,
+  "counts": {
+    "customers": 200,
+    "merchants": 50,
+    "transactions_normal": 1000,
+    "transactions_fraud": 111,
+    "transactions_total": 1111,
+    "logins": 610,
+    "payments": 549,
+    "locations": 790,
+    "labels_total": 230
+  },
+  "labels_by_scenario": {
+    "CARD_TESTING_ATTACK (payment_attack)": 129,
+    "HIGH_TRANSACTION_VELOCITY (velocity)": 71,
+    "HIGH_VALUE_ANOMALY (high_value)": 10,
+    "IMPOSSIBLE_TRAVEL (impossible_travel)": 10,
+    "LOGIN_TRANSACTION_CORRELATION (login_transaction)": 10
+  },
+  "output_dir": "E:\\FraudDetection\\data"
+}

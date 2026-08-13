@@ -1,0 +1,11 @@
+Following files are to run in give order:
+
+docker-compose.yml
+kafka/create_topics.py
+data_generator/pipeline.py
+kafka/transaction_producer.py
+kafka/payment_producer.py
+kafka/login_producer.py
+kafka/location_producer.py
+spark/streaming/runner.py
+dashboard/FraudDetectionDashboard.pbix (open and refresh)

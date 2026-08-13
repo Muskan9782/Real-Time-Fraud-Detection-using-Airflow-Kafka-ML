@@ -1,0 +1,41 @@
+{
+  "features": [
+    "is_payment",
+    "is_failed",
+    "amount_log",
+    "amount_vs_customer_avg",
+    "hour",
+    "dow",
+    "dist_km_from_home",
+    "tx_count_120s",
+    "failed_pay_count_60s",
+    "event_count_300s",
+    "seconds_since_prev_event",
+    "is_new_device",
+    "is_new_merchant",
+    "payment_method_is_card"
+  ],
+  "model_file": "/repo/ml/model/xgb_model.json",
+  "test_file": "/repo/ml/model/test_set.parquet",
+  "train_fraction": 0.8,
+  "seed": 42,
+  "params": {
+    "n_estimators": 400,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.9,
+    "colsample_bytree": 0.9,
+    "min_child_weight": 1,
+    "eval_metric": "aucpr",
+    "random_state": 42,
+    "n_jobs": 1,
+    "scale_pos_weight": 6.217391304347826
+  },
+  "n_events": 1660,
+  "n_positive": 230,
+  "n_negative": 1430,
+  "n_train": 1328,
+  "n_train_positive": 184,
+  "n_test": 332,
+  "n_test_positive": 46
+}

@@ -1,0 +1,51 @@
+merchant_id,merchant_name,category,country,city,lat,lon
+M001,Swift New York,FUEL,United States,New York,40.7128,-74.006
+M002,Swift Mumbai,FUEL,India,Mumbai,19.076,72.8777
+M003,Prime Hong Kong,FOOD,China,Hong Kong,22.3193,114.1694
+M004,Summit Dubai,ELECTRONICS,United Arab Emirates,Dubai,25.2048,55.2708
+M005,Peak San Francisco,UTILITY,United States,San Francisco,37.7749,-122.4194
+M006,Swift New York,FUEL,United States,New York,40.7128,-74.006
+M007,Horizon London,FASHION,United Kingdom,London,51.5072,-0.1276
+M008,Peak Chennai,DIGITAL,India,Chennai,13.0827,80.2707
+M009,Summit Toronto,ELECTRONICS,Canada,Toronto,43.6532,-79.3832
+M010,Swift San Francisco,TRANSFER,United States,San Francisco,37.7749,-122.4194
+M011,Peak Mumbai,UTILITY,India,Mumbai,19.076,72.8777
+M012,Summit New York,RETAIL,United States,New York,40.7128,-74.006
+M013,Nova Bangalore,PHARMACY,India,Bangalore,12.9716,77.5946
+M014,Bright Sydney,TRAVEL,Australia,Sydney,-33.8688,151.2093
+M015,Quantum Paris,DIGITAL,France,Paris,48.8566,2.3522
+M016,Swift London,PHARMACY,United Kingdom,London,51.5072,-0.1276
+M017,Prime Hyderabad,UTILITY,India,Hyderabad,17.385,78.4867
+M018,Horizon Bangalore,TRAVEL,India,Bangalore,12.9716,77.5946
+M019,Aurora Bangalore,PHARMACY,India,Bangalore,12.9716,77.5946
+M020,Swift Hyderabad,GROCERY,India,Hyderabad,17.385,78.4867
+M021,Peak Chicago,TRANSFER,United States,Chicago,41.8781,-87.6298
+M022,Metro Kolkata,DIGITAL,India,Kolkata,22.5726,88.3639
+M023,Vertex Hong Kong,ELECTRONICS,China,Hong Kong,22.3193,114.1694
+M024,Metro Tokyo,TRAVEL,Japan,Tokyo,35.6762,139.6503
+M025,Swift New York,FUEL,United States,New York,40.7128,-74.006
+M026,Horizon Chicago,GROCERY,United States,Chicago,41.8781,-87.6298
+M027,Bright Delhi,FOOD,India,Delhi,28.6139,77.209
+M028,Aurora Berlin,ENTERTAINMENT,Germany,Berlin,52.52,13.405
+M029,Global Delhi,FASHION,India,Delhi,28.6139,77.209
+M030,Prime New York,ENTERTAINMENT,United States,New York,40.7128,-74.006
+M031,Quantum Dubai,ELECTRONICS,United Arab Emirates,Dubai,25.2048,55.2708
+M032,Peak New York,PHARMACY,United States,New York,40.7128,-74.006
+M033,Quantum Paris,GROCERY,France,Paris,48.8566,2.3522
+M034,Global Manchester,FUEL,United Kingdom,Manchester,53.4808,-2.2426
+M035,Summit Hong Kong,ELECTRONICS,China,Hong Kong,22.3193,114.1694
+M036,Prime Manchester,UTILITY,United Kingdom,Manchester,53.4808,-2.2426
+M037,Swift Dubai,TRANSFER,United Arab Emirates,Dubai,25.2048,55.2708
+M038,Metro Singapore,GROCERY,Singapore,Singapore,1.3521,103.8198
+M039,Swift Bangalore,RETAIL,India,Bangalore,12.9716,77.5946
+M040,Prime Sydney,GROCERY,Australia,Sydney,-33.8688,151.2093
+M041,Metro Manchester,ENTERTAINMENT,United Kingdom,Manchester,53.4808,-2.2426
+M042,Aurora Berlin,FUEL,Germany,Berlin,52.52,13.405
+M043,Summit Hong Kong,FASHION,China,Hong Kong,22.3193,114.1694
+M044,Quantum Hyderabad,FASHION,India,Hyderabad,17.385,78.4867
+M045,Summit Chennai,FUEL,India,Chennai,13.0827,80.2707
+M046,Global Singapore,TRAVEL,Singapore,Singapore,1.3521,103.8198
+M047,Horizon Paris,DIGITAL,France,Paris,48.8566,2.3522
+M048,Aurora Dubai,DIGITAL,United Arab Emirates,Dubai,25.2048,55.2708
+M049,Aurora Chennai,UTILITY,India,Chennai,13.0827,80.2707
+M050,Aurora Hong Kong,UTILITY,China,Hong Kong,22.3193,114.1694

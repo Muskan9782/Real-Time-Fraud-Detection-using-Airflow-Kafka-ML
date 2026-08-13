@@ -1,0 +1,6 @@
+alert_type,fraud_scenario,alert_count,alert_amount,avg_probability
+CARD_TESTING_ATTACK,payment_attack,129,31066.0,0.9992
+HIGH_TRANSACTION_VELOCITY,velocity,71,1102001.0,0.9647
+HIGH_VALUE_ANOMALY,high_value,10,1720833.0,0.9873
+IMPOSSIBLE_TRAVEL,impossible_travel,10,485094.0,0.9921
+LOGIN_TRANSACTION_CORRELATION,login_transaction,10,488024.0,0.8891

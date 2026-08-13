@@ -1,0 +1,9 @@
+# Phase 18: keep the Airflow build context small - the image needs only the
+# Dockerfile (the repo is bind-mounted at /repo at run time, not COPYed).
+.git
+__pycache__
+**/__pycache__
+*.pyc
+.tools/
+data/
+spark/checkpoints/

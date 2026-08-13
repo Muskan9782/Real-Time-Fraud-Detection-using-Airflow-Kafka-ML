@@ -1,0 +1,39 @@
+# Phase 18: Airflow image with the repo's compute stack so the training /
+# quality / backfill DAGs run their real PySpark + Delta Lake + XGBoost jobs
+# inside the container. Airflow only orchestrates batch work here - it stays
+# out of the Kafka -> Spark real-time path (that remains on the host).
+#
+# Build:  docker compose build airflow
+# Run:    docker compose up -d airflow    (standalone: webserver+scheduler)
+#
+# The repo is bind-mounted read/write at /repo (see docker-compose.yml); the
+# DAGs live in /repo/dags and publish their artifacts under /repo/data/airflow
+# so the milestone runner (run_phase18.py) can verify them from the host.
+FROM apache/airflow:2.10.2
+
+# The batch jobs need a JDK to launch PySpark; the base image is Debian
+# bookworm with no JDK. Airflow runs as UID 50000, but apt needs root.
+USER root
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends openjdk-17-jre-headless \
+    && rm -rf /var/lib/apt/lists/*
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+# Linux needs no winutils.exe; pointing HADOOP_HOME at an empty dir keeps
+# spark.common from resolving the mounted repo's .tools/winutils (a Windows
+# binary that would not run here).
+RUN mkdir -p /opt/hadoop/bin
+
+USER airflow
+
+# Compute deps for ml.train / ml.evaluate / spark.batch (Phase 13/15 assets).
+# spark.jars.packages still pulls the Delta + Kafka connector jars from Maven
+# Central at session start, exactly as on the host.
+RUN pip install --no-cache-dir \
+        "pyspark>=4.2" \
+        "pyarrow>=18.0.0" \
+        "protobuf>=4.25" \
+        "xgboost>=2.0" \
+        "scikit-learn>=1.4" \
+        "pandas>=2.2.0" \
+        "numpy>=1.26"

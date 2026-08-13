@@ -1,0 +1,35 @@
+# Local tooling: Hadoop winutils.exe for Spark on Windows
+.tools/
+
+# Spark streaming checkpoints (Phase 4+)
+spark/checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.python-version
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Secrets -- never commit credentials, keys, or passwords
+*.pem
+*.key
+*.p12
+.env
+.env.*
+credentials.json
+service-account*.json
+*.jks

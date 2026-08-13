@@ -1,0 +1,49 @@
+{
+  "ok": true,
+  "checks": {
+    "raw.bronze transactions == raw (1111)": true,
+    "raw.bronze logins == raw (610)": true,
+    "raw.bronze payments == raw (549)": true,
+    "raw.bronze customer_locations == raw (790)": true,
+    "raw.bronze customers == raw (200)": true,
+    "raw.bronze merchants == raw (50)": true,
+    "silver.silver events == 3060 (1111+549+610+790)": true,
+    "silver.silver event_ids are unique": true,
+    "silver.silver event_ts parsed for every event": true,
+    "silver.silver labeled == labels.jsonl (230)": true,
+    "silver.silver scored == transactions+payments (1660)": true,
+    "silver.silver payments labels == labels.jsonl (129)": true,
+    "silver.silver transactions labels == labels.jsonl (101)": true,
+    "gold.gold customer_risk_summary == 200": true,
+    "gold.gold customer_risk_summary fraud sum == 230": true,
+    "gold.gold merchant_fraud_summary == 50": true,
+    "gold.gold fraud_events == 230": true
+  },
+  "context": {
+    "raw": {
+      "bronze transactions": 1111,
+      "bronze logins": 610,
+      "bronze payments": 549,
+      "bronze customer_locations": 790,
+      "bronze customers": 200,
+      "bronze merchants": 50
+    },
+    "silver": {
+      "events": 3060,
+      "distinct_event_ids": 3060,
+      "labeled": 230,
+      "scored": 1660,
+      "labeled_by_type": {
+        "payments": 129,
+        "transactions": 101
+      }
+    },
+    "gold": {
+      "customer_risk_summary": 200,
+      "merchant_fraud_summary": 50,
+      "fraud_events": 230,
+      "customer_fraud_events": 230
+    }
+  },
+  "written_at": "2026-08-13T16:29:36.819246+00:00"
+}
