@@ -24,6 +24,13 @@ The system creates a risk score and explanation
           v
 The alert is saved and displayed for review
 ```
+The Five Fraud Scenerios
+<img width="839" height="222" alt="image" src="https://github.com/user-attachments/assets/42cc23b6-b6b3-4aa1-9bdc-86fd73683795" />
+
+<img width="840" height="152" alt="image" src="https://github.com/user-attachments/assets/cb9d736d-ebba-4ecb-86a3-92877dd3508c" />
+
+Features and the Risk Engine
+<img width="844" height="255" alt="image" src="https://github.com/user-attachments/assets/1e5c32a4-8457-4e94-9ade-35cb4c4d6cf3" />
 
 ```
     PYTHON EVENT GENERATORS
@@ -80,6 +87,14 @@ transactions  logins  payments  customer_locations
 | 18 | Airflow DAGs (training / quality / backfill)
 | 19 | Power BI dashboard
 | 20 | GCP deployment + observability
+
+## Dashboard Pages
+
+<img width="1478" height="846" alt="image" src="https://github.com/user-attachments/assets/04b53679-31ea-46fa-b221-8b548ab10406" />
+
+<img width="1445" height="850" alt="image" src="https://github.com/user-attachments/assets/d2ae3116-76cb-42f8-b0e0-c25fde8c8aeb" />
+
+<img width="1444" height="846" alt="image" src="https://github.com/user-attachments/assets/0dd9ae19-3d3a-453c-b8dd-1d8486e45435" />
 
 ## Repository layout
 
