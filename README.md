@@ -4,6 +4,7 @@ Event-driven fraud platform: Python generators -> Kafka -> PySpark Structured
 Streaming -> Rules + XGBoost risk engine -> `fraud_alerts` + Delta Lake,
 with Airflow for batch jobs (training / quality / backfills).
 
+```
 Workflow: 
 
 Someone makes a payment
@@ -22,7 +23,7 @@ The system creates a risk score and explanation
           |
           v
 The alert is saved and displayed for review
-
+```
 
 ```
     PYTHON EVENT GENERATORS
