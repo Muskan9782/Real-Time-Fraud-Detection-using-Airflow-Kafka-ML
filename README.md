@@ -58,8 +58,8 @@ transactions  logins  payments  customer_locations
 
 ## Status
 
-| Phase | Milestone | Status |
-|-------|-----------|--------|
+| Phase | Milestone |
+|-------|-----------|
 | 1 | Python generators produce normal + fraudulent events
 | 2 | Docker + Kafka, 1,000 events Python -> Kafka -> consumer
 | 3 | Topics, partitions, keys, offsets, consumer groups
